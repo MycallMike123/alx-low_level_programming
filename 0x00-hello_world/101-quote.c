@@ -3,7 +3,7 @@
 /**
  * main - the entry point
  * printing exact words but return a std
- * return: 1 (Stantard error)
+ * Return: 1 (Success)
 */
 int main(void)
 {
