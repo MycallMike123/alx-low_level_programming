@@ -1,9 +1,9 @@
 #include <stdio.h>
-/* using puts to print a line 
- *Return: 0 (Success)
- */
+/* main -Entry point */
 int main(void)
+/* using puts to print a line */
 {
-puts("\"Programming is like building a multilingual puzzle,");
+puts("\"Programming is like building a multilingual puzzle");
+/*Return: 0 (Success) */
 return (0);
 }
