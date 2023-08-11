@@ -11,7 +11,7 @@ int main(void)
 	while (alphab >= 'a')
 	{
 		putchar(alphab);
-		alphab++;
+		alphab--;
 	}
 
 	putchar('\n');
