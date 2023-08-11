@@ -20,6 +20,7 @@ int main(void)
 	{
 		putchar(upperc);
 		upperc++;
+	}
 
 	putchar('\');
 	return (0);
