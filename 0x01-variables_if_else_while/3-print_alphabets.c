@@ -22,6 +22,6 @@ int main(void)
 		upperc++;
 	}
 
-	putchar('\');
+	putchar('\n');
 	return (0);
 }
