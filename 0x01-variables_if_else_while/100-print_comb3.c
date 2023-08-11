@@ -14,7 +14,7 @@ int main(void)
 	{
 		number2 = number1 + 1;
 
-		while (number2 < 9)
+		while (number2 <= 9)
 		{
 			putchar(number1 + '0');
 			putchar(number2 + '0');
