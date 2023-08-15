@@ -11,7 +11,7 @@ int main(void)
 	int i;
 
 	printf("%u, %u,", fib1, fib2);
-	for (i = 2; i < 98; i++)
+	for (i = 2; i < 96; i++)
 	{
 		next_fib = fib1 + fib2;
 		printf(", %u", next_fib);
@@ -21,6 +21,6 @@ int main(void)
 
 	}
 
-	printf("\n");
+	printf(", %u\n", fib1 + fib2);
 	return (0);
 }
