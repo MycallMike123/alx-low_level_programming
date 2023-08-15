@@ -17,7 +17,11 @@ void print_times_table(int n)
 			if (col != 0)
 				_putchar(',');
 			if (result < 10 && col != 0)
-				_putchar(' '), _putchar(' '), _putchar(' ');
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+			}
 			if (result >= 10 && result < 100 && col != 0)
 			{
 				_putchar(' ');
