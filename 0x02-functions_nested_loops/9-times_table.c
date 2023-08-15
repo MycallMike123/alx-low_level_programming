@@ -26,7 +26,7 @@ void times_table(void)
 				_putchar(' ');
 			}
 
-			if (product >= 10 && product < 81 && col != 0)
+			if (product >= 10 && product <= 81 && col != 0)
 
 				_putchar(' ');
 
