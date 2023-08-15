@@ -20,7 +20,7 @@ void times_table(void)
 			if (col != 0)
 				_putchar(',');
 
-			if (product < 10 && col != 0)
+			if (product < 81 && col != 0)
 				_putchar(' ');
 
 			if (product >= 10)
