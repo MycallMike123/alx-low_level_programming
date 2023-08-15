@@ -9,7 +9,7 @@ int main(void)
 {
 	unsigned int fib1 = 1, fib2 = 2, next_fib;
 
-	printf("%d, %d,", fib1, fib2);
+	printf("%u, %u,", fib1, fib2);
 	for (int i = 2; i < 98; i++)
 	{
 		next_fib = fib1 + fib2;
