@@ -7,24 +7,25 @@
 
 int main(void)
 {
-	int fib1 = 1;
-	int fib2 = 2;
-	int next_fib;
+	unsigned long fib1 = 0;
+	unsigned long fib2 = 1;
+	unsigned long next_fib;
 	int i;
 
-	printf("%d, %d", fib1, fib2);
-
-	for (i = 2; i < 48; i++)
+	for (i = 0; i < 50; i++)
 	{
 		next_fib = fib1 + fib2;
-		printf(", %d", next_fib);
+		printf("%lu", next_fib);
 
 
 		fib1 = fib2;
 		fib2 = next_fib;
-	}
 
-	printf("\n");
+		if (count == 49)
+			printf("\n");
+		else
+			printf(", ");
+	}
 
 	return (0);
 }
