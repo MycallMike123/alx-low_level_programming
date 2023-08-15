@@ -8,6 +8,7 @@
 int main(void)
 {
 	unsigned int fib1 = 1, fib2 = 2, next_fib;
+	int i;
 
 	printf("%u, %u,", fib1, fib2);
 	for (i = 2; i < 98; i++)
