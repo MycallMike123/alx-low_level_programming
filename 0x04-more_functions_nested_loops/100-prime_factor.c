@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long long int num = 612852475143;
-	long long int lpf = -1;
-	long long int i;
+	long num = 612852475143;
+	long lpf = -1;
+	long i;
 
 	while (num % 2 == 0)
 	{
@@ -26,12 +26,13 @@ int main(void)
 			num /= i;
 		}
 	}
+
 	if (num > 2)
 	{
 		lpf = num;
 	}
 
-	printf("%lld\n", lpf);
+	printf("%ld\n", lpf);
 
 	return (0);
 }
