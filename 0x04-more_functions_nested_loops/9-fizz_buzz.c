@@ -7,11 +7,14 @@
 
 int main(void)
 {
-	int num;
+	int num = 1;
 
-	for (num = 1; num <= 100; num++)
+	while (num <= 100)
 	{
-
+		if (num % 3 == 0 && num % 5 == 0)
+		{
+			printf("FizzBuzz ");
+		}
 		if (num % 3 == 0)
 		{
 			printf("Fizz ");
@@ -21,15 +24,11 @@ int main(void)
 		{
 			printf("Buzz ");
 		}
-		else if (num % 3 == 0 && num % 5 == 0)
-		{
-			printf("FizzBuzz ");
-		}
 		else
 		{
 			printf("%d ", num);
 		}
-
+		num++;
 	}
 	printf("\n");
 
