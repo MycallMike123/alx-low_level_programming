@@ -7,27 +7,18 @@
 
 void print_number(int n)
 {
-	int div = 1;
-	int temp = n;
-	int digit;
-
+	unsigned int temp = n;
 
 	if (n < 0)
 	{
-		_putchar(45);
-		n = -n;
-	}
-	while (temp > 9)
-	{
-		div *= 10;
-		temp /= 10;
+		_putchar('-');
+		temp = -temp;
 	}
 
-	while (div > 0)
+	if ((temp / 10) > 0)
 	{
-		digit = n / div;
-		_putchar(digit + '0');
-		n -= digit * div;
-		div /= 10;
+		print_number(temp / 10);
 	}
+
+	_putchar((temp % 10) + '0');
 }
