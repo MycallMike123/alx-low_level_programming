@@ -12,6 +12,11 @@ int _atoi(char *s)
 	int result = 0;
 	int z = 0;
 
+	while (s[i] == ' ')
+	{
+		z++;
+	}
+
 	if (s[z] == '-')
 	{
 		num_sign = -1;
@@ -25,6 +30,11 @@ int _atoi(char *s)
 
 	while (s[z] != '\0' && s[z] >= '0' && s[z] <= '9')
 	{
+		if (result > (INT_MAX - (s[z] - '0')) / 10)
+		{
+			return ((num_sign == 1) ? INT_MAX : INT_MIN);
+		}
+		result = result * 10 + (s[z] - '0');
 		z++;
 	}
 
