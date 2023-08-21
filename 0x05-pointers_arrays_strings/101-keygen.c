@@ -35,7 +35,7 @@ int main(void)
 
 		passwd[PASSWORD_LENGTH] = '\0';
 
-	} while (strcmp(passwd, expected) != 0);
+	} while (strcmp(passwd, success) != 0);
 
 	printf("%s\n", passwd);
 
