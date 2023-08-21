@@ -39,6 +39,9 @@ int _atoi(char *s)
 		z++;
 	}
 	if (z == 0 || (z == 1 && (s[0] == '+' || s[0] == '-')))
+	{
+		return (0);
+	}
 
 	return (result * num_sign);
 }
