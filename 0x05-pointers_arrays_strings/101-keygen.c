@@ -17,7 +17,7 @@ int main(void)
 	const char chars1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	const char chars2[] = "0123456789";
 	char passwd[PASSWORD_LENGTH + 1];
-	const char success[] = "Tada! Congrats"
+	const char success[] = "Tada! Congrats";
 	int i;
 
 	srand(time(NULL));
