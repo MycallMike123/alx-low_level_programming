@@ -12,7 +12,7 @@ int _atoi(char *s)
 	int result = 0;
 	int z = 0;
 
-	while (s[i] == ' ')
+	while (s[z] == ' ')
 	{
 		z++;
 	}
