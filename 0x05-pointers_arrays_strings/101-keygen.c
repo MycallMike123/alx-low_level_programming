@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
-
-#define PASSWORD_LENGTH 11
 
 /**
  * main - Generates a random valid password
@@ -13,31 +10,29 @@
 
 int main(void)
 {
-	const char chars[] = "abcdefghijklmnopqrstuvwxyz";
-	const char chars1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	const char chars2[] = "0123456789";
-	char passwd[PASSWORD_LENGTH + 1];
-	const char success[] = "Tada! Congrats";
-	int i;
+	int passwd[100];
+	int a;
+	int all;
+	int n;
+
+	all = 0;
 
 	srand(time(NULL));
 
-	do {
-		for (i = 0; i < PASSWORD_LENGTH; i++)
+	for (a = 0; a < 100; a++)
+	{
+		passwd[a] = rand() % 78;
+		all += (passwd[a] + '0');
+		putchar(passwd[a] + '0');
+		if ((2772 - all) - '0' < 78)
 		{
-			if (i < 10)
-				passwd[i] = chars[rand() % (sizeof(chars) - 1)];
-			else if (i < 20)
-				passwd[i] = chars1[rand() % (sizeof(chars1) - 1)];
-			else
-				passwd[i] = chars2[rand() % (sizeof(chars2) - 1)];
+			n = 2772 - all - '0';
+			all += n;
+			putchar(n + '0');
+			break;
 		}
 
-		passwd[PASSWORD_LENGTH] = '\0';
-
-	} while (strcmp(passwd, success) != 0);
-
-	printf("%s\n", passwd);
+	}
 
 	return (0);
 }
