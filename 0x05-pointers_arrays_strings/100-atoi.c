@@ -13,14 +13,14 @@ int _atoi(char *s)
 	int result = 0;
 	int z = 0;
 
-	while (s[z] == ' ')
+	while (s[z] == ' ' || (s[z] >= 9 && s[z] <= 13))
 	{
 		z++;
 	}
 
 	if (s[z] == '-')
 	{
-		num_sign = -1;
+		num_sign *= -1;
 		z++;
 	}
 
@@ -29,7 +29,7 @@ int _atoi(char *s)
 		z++;
 	}
 
-	while (s[z] != '\0' && s[z] >= '0' && s[z] <= '9')
+	while (s[z] >= '0' && s[z] <= '9')
 	{
 		if (result > (INT_MAX - (s[z] - '0')) / 10)
 		{
@@ -37,10 +37,6 @@ int _atoi(char *s)
 		}
 		result = result * 10 + (s[z] - '0');
 		z++;
-	}
-	if (z == 0 || (z == 1 && (s[0] == '+' || s[0] == '-')))
-	{
-		return (0);
 	}
 
 	return (result * num_sign);
