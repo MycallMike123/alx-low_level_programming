@@ -38,6 +38,7 @@ int _atoi(char *s)
 		result = result * 10 + (s[z] - '0');
 		z++;
 	}
+	if (z == 0 || (z == 1 && (s[0] == '+' || s[0] == '-')))
 
 	return (result * num_sign);
 }
