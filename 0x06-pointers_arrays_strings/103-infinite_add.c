@@ -14,7 +14,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int length_n1 = strlen(n1);
 	int length_n2 = strlen(n2);
 	int c = 0;
-	int k, l;
+	int k, l, m;
 	int first_digit, second_digit, sum;
 
 	if (length_n1 + 1 > size_r || length_n2 + 1 > size_r)
@@ -22,6 +22,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	r[size_r - 1] = '\0';
 	k = length_n1 - 1;
 	l = length_n2 - 1;
+	m = size_r - 2;
 
 	while (k >= 0 || l >= 0 || c)
 	{
@@ -30,11 +31,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 		sum = first_digit + second_digit + c;
 		c = sum / 10;
-		r[size_r - 2] = (sum % 10) + '0';
+		r[m] = (sum % 10) + '0';
 
-		k++;
-		l++;
-		size_r--;
+		k--;
+		l--;
+		m--;
 	}
-	return (r + size_r);
+	if (m >= 0)
+		return (r + m + 1);
+	else
+		return (0);
 }
