@@ -2,9 +2,9 @@
 
 int main(void)
 {
-int n;
-int a[5];
-int *p;
+	int n;
+	int a[5];
+	int *p;
 
 a[2] = 1024;
 p = &n
@@ -16,7 +16,7 @@ p = &n
  * - only one statement
  * - you are not allowed to code anything else than this line of code
  */
-*(p + 2) = 98;
+*(p - 1) = 98;
 /* ...so that this prints 98\n */
 printf("a[2] = %d\n", a[2]);
 return (0);
