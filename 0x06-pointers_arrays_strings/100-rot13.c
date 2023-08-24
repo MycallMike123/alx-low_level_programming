@@ -14,26 +14,11 @@ char *rot13(char *str)
 
 	for (a = 0; str[a] != '\0'; a++)
 	{
-		char *pointer = alp;
-		char *rot13_pointer = rot13_alp;
-		char found = 0;
+		char *found = strchr(alp, str[a]);
 
-		while (*pointer != '\0')
+		if (found)
 		{
-			if (*pointer == str[a])
-			{
-				str[a] = *rot13_pointer;
-				found = 1;
-				break;
-			}
-
-			pointer++;
-			rot13_pointer++;
-		}
-
-		if (!found)
-		{
-			str[a] = str[a];
+			str[a] = rot13_alp[found - alp];
 		}
 	}
 	return (str);
