@@ -8,12 +8,10 @@
 
 char *leet(char *str)
 {
-	char *lcr, *lce;
+	char *lcr = "aAeEoOtTlL";
+	char *lce = "4433007711";
 	int i;
 	int k;
-
-	*lcr = "aAeEoOtTlL";
-	*lce = "4433007711";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
