@@ -16,4 +16,5 @@ int _palindrome(char *s, int srt, int end);
 int string_len(char *s);
 int wildcmp(char *s1, char *s2);
 
+
 #endif
