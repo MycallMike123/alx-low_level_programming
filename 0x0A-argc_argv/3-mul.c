@@ -8,7 +8,7 @@
  * Return: 0 for success, 1 for error
  */
 
-int main(int argc, char *argv[])
+int _atoi(char *str)
 {
 	int first_num, second_num, output;
 	if (argc != 3)
