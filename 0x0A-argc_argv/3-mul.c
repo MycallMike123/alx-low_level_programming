@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	first_num = atoi(argv[1]);
-	second_num = atoi(argv[2]);
+	first_num = _atoi(argv[1]);
+	second_num = _atoi(argv[2]);
 
 	output = first_num * second_num;
 
