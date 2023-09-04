@@ -37,17 +37,18 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-
-	for (a = 0; a < s1_len; a++)
+	while (s1[s1_len] != '\0')
 	{
 		joined[a] = s1[a];
+		s1_len++;
 	}
-	for (a = 0; a < s2_len; a++)
+	while (s2[s2_len] != '\0')
 	{
 		joined[a] = s2[a];
+		s1_len++, s2_len++;
 	}
 
-	joined[s1_len + s2_len] = '\0';
+	joined[s1_len] = '\0';
 
 	return (joined);
 }
