@@ -18,6 +18,11 @@ char *_strdup(char *str)
 		len++;
 	}
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	if (copy == NULL)
 	{
 		return (NULL);
