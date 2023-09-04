@@ -17,7 +17,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (a = 0; a <= length; a++)
+	for (a = 0; a <= len; a++)
 	{
 		copy[a] = str[a];
 	}
