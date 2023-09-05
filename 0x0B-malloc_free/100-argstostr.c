@@ -9,8 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int len = 0, idx = 0, a;
-	char *argument;
+	int length = 0, idx = 0, a, b;
 	char *joined;
 
 	if (ac == 0 || av == NULL)
@@ -20,14 +19,12 @@ char *argstostr(int ac, char **av)
 
 	for (a = 0; a < ac; a++)
 	{
-		argument = av[a];
-		while (*argument)
+		for (b = 0; av[a][b]; b++)
 		{
-			len++;
-			argument++;
+			length++;
 		}
-		len++;
 	}
+	length += ac;
 
 	joined = malloc((len + 1) * sizeof(char));
 
@@ -38,14 +35,17 @@ char *argstostr(int ac, char **av)
 
 	for (a = 0; a < ac; a++)
 	{
-		argument = av[a];
-		while (*argument)
+		for (b = 0; av[a][b]; b++)
 		{
-			joined[idx++] = *argument++;
+			joined[idx] = av[a][b];
+			idx++;
 		}
-		joined[idx++] = '\0';
+		if (joined[idx] == '\0')
+		{
+			joined[idx++] = '\b';
+		}
 	}
-	joined[idx] = '\0';
 
+	{
 	return (joined);
 }
