@@ -42,7 +42,6 @@ char *argstostr(int ac, char **av)
 		}
 		if (joined[idx] = '\0')
 		{
-
 			joined[idx++] = '\n';
 		}
 	}
