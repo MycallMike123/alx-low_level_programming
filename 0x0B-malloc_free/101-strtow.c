@@ -40,7 +40,7 @@ char **strtow(char *str)
 				free(words_c);
 				return (NULL);
 			}
-			strncpy(words_a[b], str + a, c - a);
+			strncpy(words_c[b], str + a, c - a);
 			words_c[b][c - a] = '\0';
 			b++;
 			a = c;
