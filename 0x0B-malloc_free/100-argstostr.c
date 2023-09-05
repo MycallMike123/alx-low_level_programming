@@ -24,6 +24,7 @@ char *argstostr(int ac, char **av)
 			length++;
 		}
 		length++;
+	}
 
 	joined = malloc((length + 1) * sizeof(char));
 
@@ -39,7 +40,7 @@ char *argstostr(int ac, char **av)
 			joined[idx] = av[a][b];
 		}
 
-		joined[idx++] == '\n';
+		joined[idx++] = '\n';
 	}
 	joined[idx] = '\0';
 
