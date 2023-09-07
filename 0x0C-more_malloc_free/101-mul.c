@@ -23,14 +23,52 @@ int is_digit(char *str)
 
 /**
  * multiply - Multiplies two positive numbers
- * @n1: The first number
- * @n2: The second number
+ * @num1: The first number
+ * @num2: The second number
  * Return: The result
  */
-
-int multiply(char *n1, char *n2)
+char *multiply(const char *num1, const char *num2)
 {
-	return (atoi(n2) * atoi(n1));
+	int int_len1 = 0, int_len2 = 0, res_len, prod, sum, a, b;
+	char *zero, *res_str;
+	int *result;
+
+	while (num1[int_len1] != '\0')
+		int_len1++;
+	while (num2[int_len2] != '\0')
+		int_len2++;
+
+	res_len = int_len1 + int_len2;
+	result = calloc(res_len, sizeof(int));
+
+	for (a = int_len1 - 1; a >= 0; a--)
+	{
+		for (b = int_len2 - 1; b >= 0; b--)
+		{
+			prod = (num1[a] - '0') * (num2[b] - '0');
+			sum = prod + result[a + b + 1];
+			result[a + b] += sum / 10;
+			result[a + b + 1] = sum % 10;
+		}
+	}
+
+	a = 0;
+	while (a < res_len && result[a] == 0)
+		a++;
+
+	if (a == res_len)
+	{
+		zero = "0";
+		return (zero);
+	}
+	res_str = malloc(res_len - a + 1);
+	for (b = a; b < res_len; b++)
+		res_str[b - a] = result[b] + '0';
+
+	res_str[res_len - a] = '\0';
+
+	free(result);
+	return (res_str);
 }
 
 /**
@@ -40,9 +78,9 @@ int multiply(char *n1, char *n2)
  * Return: 0 success, 98 for error
  */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	int res;
+	char *num1, *num2, *result;
 
 	if (argc != 3)
 	{
@@ -56,8 +94,11 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	res = multiply(argv[1], argv[2]);
-	printf("%d\n", res);
+	num1 = argv[1];
+	num2 = argv[2];
+	result = multiply(num1, num2);
+	printf("%s\n", result);
+	free(result);
 
 	return (0);
 }
