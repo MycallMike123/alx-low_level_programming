@@ -15,10 +15,10 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	{
 		return;
 	}
-	
+
 	d->name = malloc(1 + strlen(name));
 	d->owner = malloc(1 + strlen(owner));
-	
+
 	if (d->owner == NULL || d->name == NULL)
 	{
 		exit(EXIT_FAILURE);
