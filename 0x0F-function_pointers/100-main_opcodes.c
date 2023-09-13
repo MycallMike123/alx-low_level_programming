@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 	for (a = 0; a < bytes_count; a++)
 	{
-		printf("%02x", opcodes[a]);
+		printf("%02hhx", opcodes[a]);
 
 		if (a < bytes_count - 1)
 		{
