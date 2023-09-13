@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	output = calculation(a + b);
+	output = calculation(a, b);
 	printf("%d\n", output);
 
 	return (0);
