@@ -1,5 +1,5 @@
 section .data
-	hello db "Hello, Holberton,", 0  ; Null-terminated string
+	hello db "Hello, Holberton,", 10, 0  ; Null-terminated string
 
 section .text
 	global main
@@ -7,9 +7,10 @@ section .text
 extern printf
 
 main:
-	push rbp
-	mov edi, hello
+	sub rsp, 8
+	mov rdi, hello
 	call printf
+	add rsp, 8
 
 	mov rax, 60
 	xor rdi, rdi
