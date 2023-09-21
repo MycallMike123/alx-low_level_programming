@@ -7,8 +7,8 @@ section .text
 extern printf
 
 main:
-	mov edi, format ; Load the address of the string into edi
-	xor eax, eax     ; Clear the eax register
+	mov edi, hello  ; Load the address of the string into edi
+	xor eax, eax    ; Clear the eax register
 	call printf     ; Call the printf function
 
 	; Exit the program
