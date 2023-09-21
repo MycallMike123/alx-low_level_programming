@@ -7,10 +7,10 @@ section .text
 extern printf
 
 main:
+	push rbp
 	mov edi, hello
-	xor eax, eax
 	call printf
 
-	mov eax, 0
-	xor edi, edi
+	mov rax, 60
+	xor rdi, rdi
 	syscall
