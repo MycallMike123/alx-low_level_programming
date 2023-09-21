@@ -7,11 +7,10 @@ section .text
 extern printf
 
 main:
-	mov edi, hello  ; Load the address of the string into edi
-	xor eax, eax    ; Clear the eax register
-	call printf     ; Call the printf function
+	mov edi, hello
+	xor eax, eax
+	call printf
 
-	; Exit the program
-	mov eax, 60     ; Syscall number for exit (60 on x86-64)
-	xor edi, edi    ; Status code 0
-	syscall         ; Invoke syscall to exit
+	mov eax, 0
+	xor edi, edi
+	syscall
