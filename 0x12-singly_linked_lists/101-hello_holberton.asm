@@ -1,17 +1,11 @@
-section .data
-	hello db "Hello, Holberton", 10, 0  ; Null-terminated string
-
-section .text
 	global main
-
-extern printf
+	extern printf
 
 main:
-	sub rsp, 8
-	mov rdi, hello
+	mov edi, hello
+	xor eax, eax
 	call printf
-	add rsp, 8
+	mov eax, 0
+	ret
 
-	mov rax, 60
-	xor rdi, rdi
-	syscall
+hello: db `Hello, Holberton\n`,0
