@@ -2,10 +2,10 @@
 	extern printf
 
 main:
-	mov edi, hello
+	mov edi, greeting_Hoberton
 	xor eax, eax
 	call printf
 	mov eax, 0
 	ret
 
-hello: db `Hello, Holberton\n`,0
+greeting_Hoberton: db `Hello, Holberton\n`,0
