@@ -12,12 +12,12 @@ int pop_listint(listint_t **head)
 
 	listint_t *temp_node;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		return (0);
 	}
 
-	temp_node + *head;
+	temp_node = *head;
 	data_returned = temp_node->n;
 
 	*head = temp_node->next;
