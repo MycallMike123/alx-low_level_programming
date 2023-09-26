@@ -20,10 +20,24 @@ size_t print_listint_safe(const listint_t *head)
 		fast_pointr = (fast_pointr->next != NULL) ? fast_pointr->next->next : NULL;
 		if (slow_pointer == fast_pointr)
 		{
-			printf("-> [%p] %d\n", (void *)slow_pointer, slow_pointer->n);
-			exit(98);
-		}
-	}
+			if (nodes_count == 1)
+			{
+				printf("[%p] %d\n", (void *)slow_pointer, slow_pointer->n);
+				return (nodes_count);
+			}
 
+			slow_pointer = head;
+			while (slow_pointer != fast_pointr)
+			{
+				printf("[%p] %d\n", (void *)slow_pointer, slow_pointer->n);
+				nodes_count++;
+				slow_pointer = slow_pointer->next;
+				fast_pointr = fast_pointr->next;
+			}
+			printf("-> [%p] %d\n", (void *)slow_pointer, slow_pointer->n);
+			break;
+		}
+
+	}
 	return (nodes_count);
 }
