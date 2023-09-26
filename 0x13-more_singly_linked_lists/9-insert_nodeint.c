@@ -44,12 +44,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 
-	if (prev_node != NULL)
-		prev_node->next = added_node;
-	else
-		*head = added_node;
-
 	added_node->next = current_node;
+	prev_node->next = added_node;
 
 	return (added_node);
 }
