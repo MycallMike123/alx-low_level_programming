@@ -18,7 +18,7 @@ size_t free_listint_safe(listint_t **h)
 		return (0);
 	}
 
-	current_node *h;
+	current_node = *h;
 
 	while (current_node != NULL)
 	{
