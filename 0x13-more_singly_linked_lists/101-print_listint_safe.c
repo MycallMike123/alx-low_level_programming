@@ -48,7 +48,7 @@ size_t print_listint_safe_len(const listint_t *head)
 	const listint_t *slow_ptr;
 	size_t nodes_count = 1;
 
-	if (head->next == NULL || head == NULL)
+	if (head == NULL || head->next == NULL)
 	{
 		return (0);
 	}
