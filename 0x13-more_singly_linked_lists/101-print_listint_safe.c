@@ -8,7 +8,7 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow_pointer, *fast_pointr;
+	const listint_t *slow_pointer = head, *fast_pointr = head;
 	size_t nodes_count = 0;
 
 	while (fast_pointr != NULL && slow_pointer != NULL)
