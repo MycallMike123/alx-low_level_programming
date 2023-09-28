@@ -19,3 +19,4 @@ int get_bit(unsigned long int n, unsigned int index)
 	bit_isolate = 1UL << index;
 
 	return ((n & bit_isolate) ? 1 : 0);
+}
