@@ -126,7 +126,7 @@ void print_class(Elf64_Ehdr *elf_hr)
 
 void print_version(Elf64_Ehdr *elf_hr)
 {
-	printf("  Version:                           %d (current)\n", elf_hr->e_ident[EI_VERSION]);
+	printf("  Version:              %d (current)\n", elf_hr->e_ident[EI_VERSION]);
 }
 
 /**
@@ -136,7 +136,7 @@ void print_version(Elf64_Ehdr *elf_hr)
 
 void print_abiversion(Elf64_Ehdr *elf_hr)
 {
-	printf("  ABI Version:                       %d\n", elf_hr->e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                %d\n", elf_hr->e_ident[EI_ABIVERSION]);
 }
 
 /**
