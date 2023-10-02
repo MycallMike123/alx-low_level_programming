@@ -62,6 +62,12 @@ int file_copy(const char *source_filename, const char *dest_filename)
 		close(file1);
 		return (2);
 	}
+	if (chmod(dest_filename, 0664) == -1)
+	{
+		close(file1);
+		close(file2);
+		return (2);
+	}
 
 	while ((read_bytes = read(file1, buf, BUFFER_SIZE)) > 0)
 	{
